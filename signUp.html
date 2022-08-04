@@ -5,15 +5,22 @@
     <meta charset="UTF-8">
     <title>SignUp</title>
     <style>
+        body {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            background-color: #7171BF;
+            color: #f5f6f7;
+        }
+
         header {
             text-align: center;
             margin-bottom: 10%;
         }
 
-        #box {
-            width: 30%;
-            margin-left: auto;
-            margin-right: auto;
+        form {
+            margin: 0 auto;
+            max-width: 500px;
             border: 1px solid black;
             padding: 10px;
             box-shadow: 0 0 5px 1px black;
@@ -22,6 +29,11 @@
         input,
         select {
             margin-bottom: 10px;
+            background-color: #3E3E5C;
+            color: white;
+            border: 1px solid #7171bf;
+
+            padding: 5px;
         }
 
         #email {
@@ -34,14 +46,15 @@
 
         }
 
-        #signup-btn {
+        input[type="submit"] {
             font-size: 20px;
             width: 30%;
             height: 50px;
             margin: auto;
             margin-left: 33%;
-            background-color: rgb(72, 239, 206);
-            box-shadow: 0 0 5px 1px black;
+            margin-top: 50px;
+            background-color: #00CCF9;
+            box-shadow: 0 0 5px 1px #FFFFFF;
 
         }
     </style>
@@ -54,70 +67,73 @@
     <main>
 
         <section>
-            <div id="box">
-                <form action="https://formspree.io/f/mrgdzlkw" method="POST">
-                    <label for="name">Full Name</label><span class="required">*</span>
-                    <br>
-                    <input type="text" name="name" id="name" placeholder="Full Name" required>
 
-                    <br>
-                    <label for="email">Email</label><span class="required">*</span>
-                    <br>
-                    <input type="email" name="email" id="email" placeholder="Email" required>
+            <form action="https://formspree.io/f/mrgdzlkw" method="POST">
+                <label for="name">Full Name</label><span class="required">*</span>
+                <br>
+                <input type="text" name="name" id="name" placeholder="Full Name" required>
 
-                    <br>
-                    <label for="password">Password</label><span class="required">*</span>
-                    <br>
-                    <input type="password" id="password" name="password" placeholder="Password" required minlength='8'>
+                <br>
+                <label for="email">Email</label><span class="required">*</span>
+                <br>
+                <input type="email" name="email" id="email" placeholder="Email" required>
 
-                    <br>
-                    <label for="DOB">Date of Birth</label>
-                    <br>
-                    <input type="date" name="date" id="DOB" placeholder="Date of Birth" >
+                <br>
+                <label for="password">Password</label><span class="required">*</span>
+                <br>
+                <input type="password" id="password" name="password" placeholder="Password" required minlength='8'>
 
-                    <br>
-                    <label for="country">Country</label>
-                    <br>
-                    <select id="country" name="country" placeholder="none">
-                        <option value="Algeria">Algeria</option>
-                        <option value="Bahrain">Bahrain</option>
-                        <option value="Comoros-Islands">Comoros Islands</option>
-                        <option value="Djibouti">Djibouti</option>
-                        <option value="Egypt">Egypt</option>
-                        <option value="IraqJordan">IraqJordan</option>
-                        <option value="Jordan">Jordan</option>
-                        <option value="Kuwait">Kuwait</option>
-                        <option value="Lebanon">Lebanon</option>
-                        <option value="Libya">Libya</option>
-                        <option value="Morocco">Morocco</option>
-                        <option value="Mauritania">Mauritania</option>
-                        <option value="Oman">Oman</option>
-                        <option value="Palestine">Palestine</option>
-                        <option value="Qatar">Qatar</option>
-                        <option value="Saudi-Arabia">Saudi-Arabia</option>
-                        <option value="Somalia">Somalia</option>
-                        <option value="Sudan">Sudan</option>
-                        <option value="Syria">Syria</option>
-                        <option value="Tunisia">Tunisia</option>
-                        <option value="United-Arab-Emirates">United Arab Emirates</option>
-                        <option value="Yemen">Yemen</option>
-                    </select>
+                <br>
+                <label for="DOB">Date of Birth</label>
+                <br>
+                <input type="date" name="date" id="DOB" placeholder="Date of Birth">
 
-                    <br>
-                    <fieldset>
-                        <legend>Plan</legend>
+                <br>
+                <label for="country">Country</label>
+                <br>
+                <select id="country" name="country">
+                    <option value="">(select one)</option>
+                    <option value="Algeria">Algeria</option>
+                    <option value="Bahrain">Bahrain</option>
+                    <option value="Comoros-Islands">Comoros Islands</option>
+                    <option value="Djibouti">Djibouti</option>
+                    <option value="Egypt">Egypt</option>
+                    <option value="IraqJordan">IraqJordan</option>
+                    <option value="Jordan">Jordan</option>
+                    <option value="Kuwait">Kuwait</option>
+                    <option value="Lebanon">Lebanon</option>
+                    <option value="Libya">Libya</option>
+                    <option value="Morocco">Morocco</option>
+                    <option value="Mauritania">Mauritania</option>
+                    <option value="Oman">Oman</option>
+                    <option value="Palestine">Palestine</option>
+                    <option value="Qatar">Qatar</option>
+                    <option value="Saudi-Arabia">Saudi-Arabia</option>
+                    <option value="Somalia">Somalia</option>
+                    <option value="Sudan">Sudan</option>
+                    <option value="Syria">Syria</option>
+                    <option value="Tunisia">Tunisia</option>
+                    <option value="United-Arab-Emirates">United Arab Emirates</option>
+                    <option value="Yemen">Yemen</option>
+                    <option value="Other">Other</option>
+                </select>
 
-                        <label for="free"><input type="radio" id="free" value="Free" name="plan"> Free</label>
-                        <label for="pro"><input type="radio" id="pro" value="Pro" name="plan"> Pro</label>
-                    </fieldset>
+                <br>
+                <fieldset>
+                    <legend>Plan</legend>
 
-                    <br>
+                    <label for="free"><input type="radio" id="free" value="Free" name="plan"> Free</label>
+                    <label for="pro"><input type="radio" id="pro" value="Pro" name="plan"> Pro</label>
+                </fieldset>
 
-                    <label for="agree" a><input type="checkbox" id="agree" required> “I agree to terms and conditions”.</label>
-                    <br>
-                    <input type="submit" value="SignUp" id="signup-btn">
-                </form>
-            </div>
+                <br>
+
+                <label for="agree" a><input type="checkbox" id="agree" required> “I agree to terms and
+                    conditions”.</label>
+                <br>
+                <input type="submit" value="SignUp">
+            </form>
+
         </section>
     </main>
 
